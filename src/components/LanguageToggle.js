@@ -13,10 +13,10 @@ const LanguageToggle = () => {
       aria-label={`Switch to ${language === 'en' ? 'Chinese' : 'English'}`}
     >
       <span className="active-lang">
-        {language === 'en' ? 'EN' : '中'}
+        {language === 'en' ? '中' : 'EN'}
       </span>
       <span className="inactive-lang">
-        {language === 'en' ? '中' : 'EN'}
+        {language === 'en' ? 'EN' : '中'}
       </span>
     </button>
   );
