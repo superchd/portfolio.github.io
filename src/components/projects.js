@@ -6,14 +6,20 @@ import data, { getText } from "../data"
 import "../styles/projects.scss"
 
 import airplaneImage from "../images/ProjectPhotos/airplane.webp"
+import kaboatVideo from "../images/ProjectPhotos/KaboatVideo.mp4"
 import watoImage from "../images/ProjectPhotos/Wato.webp"
+import bangujeongImage from "../images/ProjectPhotos/multi_robot.jpg"
 import hisecurityImage from "../images/ProjectPhotos/HiSecurity2.webp"
 import pilotImg from "../images/ProjectPhotos/Pilot.webp"
 import vexImg from "../images/ProjectPhotos/VEX.webp"
 import wearableImg from "../images/ProjectPhotos/wearableHacks.webp"
+import harmonywearableImg from "../images/ProjectPhotos/harmonyWearable.png"
 import webappImg from "../images/ProjectPhotos/WebappProjects.webp"
 import mte380Img from "../images/ProjectPhotos/mte380.webp"
+import cancerPredictionImg from "../images/ProjectPhotos/Breast_Cancer_Prediction.png"
 import capstoneVideo from "../images/ProjectPhotos/capstone.mp4"
+import harmonyVideo from "../images/ProjectPhotos/harmonyProjects.mp4"
+import logAnalysisImage from "../images/ProjectPhotos/logAnalysis.png"
 
 const Project = () => {
   const { language } = useLanguage();
@@ -25,12 +31,18 @@ const Project = () => {
     airplaneImage,
     watoImage,
     capstoneVideo,
+    bangujeongImage,
+    kaboatVideo,
     webappImg,
     wearableImg,
     mte380Img,
     hisecurityImage,
+    harmonywearableImg,
+    cancerPredictionImg,
+    logAnalysisImage,
     vexImg,
-    pilotImg
+    pilotImg,
+    harmonyVideo
   };
 
   // Get carousel items from data with translated content

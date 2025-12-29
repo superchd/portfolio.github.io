@@ -1,11 +1,10 @@
 module.exports = {
-  // Remove pathPrefix for custom domain setup
+  pathPrefix: "/portfolio.github.io",
   siteMetadata: {
-    title: `Hi, I'm Steven`,
-    description: `Here is my personal website`,
-    author: `Steven Feng`,
+    title: `Hi, I'm Hyundae`,
+    description: `Hyundae Cha — Robotics / Controls Portfolio`,
+    author: `Hyundae Cha`,
   },
-  // Add development-specific configuration
   flags: {
     FAST_DEV: true,
   },
@@ -23,13 +22,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Steven Feng Portfolio`,
-        short_name: `Steven`,
+        name: `Hyundae Cha Portfolio`,
+        short_name: `Hyundae`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `./src/images/GoosePhoto.jpg`, // This path is relative to the root of the site.
+        icon: `./src/images/GoosePhoto.jpg`, // 나중에 네 아이콘 파일로 교체하면 됨
       },
     },
     `gatsby-plugin-sass`,
@@ -37,14 +36,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-gtag`,
       options: {
-        // Use environment variable for security
         trackingId: process.env.GATSBY_GA_MEASUREMENT_ID,
         head: false,
         anonymize: true,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
-}
+};

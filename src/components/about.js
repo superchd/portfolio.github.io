@@ -1,9 +1,9 @@
-import React from "react"
-import Fade from "./animations/Fade"
-import { useLanguage } from "../contexts/LanguageContext"
-import data, { getText } from "../data"
-import selfImage from "./../images/SelfPhoto4.webp"
-import "../styles/about.scss"
+import React from "react";
+import Fade from "./animations/Fade";
+import { useLanguage } from "../contexts/LanguageContext";
+import data, { getText } from "../data";
+import selfImage from "./../images/SelfPhoto4.png";
+import "../styles/about.scss";
 
 const About = () => {
   const { language } = useLanguage();
@@ -29,13 +29,13 @@ const About = () => {
           </div>
           <Fade bottom duration={1000} distance="20px">
             <div className="image-container">
-              <img src={selfImage} alt="Steven Feng" className="img-fluid" loading="lazy" />
+              <img src={selfImage} alt="Hyundae Cha" className="img-fluid" loading="lazy" />
             </div>
           </Fade>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;

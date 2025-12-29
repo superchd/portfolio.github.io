@@ -1,21 +1,20 @@
-import React from "react"
-import SEO from "../components/seo"
-import Layout from "../components/layout"
-import Fade from "../components/animations/Fade"
-import "../css/resume.scss"
-import { useLanguage } from "../contexts/LanguageContext"
-import data, { getText } from "../data"
+import React from "react";
+import SEO from "../components/seo";
+import Layout from "../components/layout";
+import Fade from "../components/animations/Fade";
+import "../css/resume.scss";
+import { useLanguage } from "../contexts/LanguageContext";
+import data, { getText } from "../data";
 
-// Component that uses the language context - must be inside Layout
 const ResumeContent = () => {
   const { language } = useLanguage();
-  
-  // Resume PDF URLs - can be configured for different languages
+
+  // ✅ 너 구글드라이브 /preview 링크로 교체
   const resumeUrls = {
-    en: "https://drive.google.com/file/d/1fPQOUJndzVjnpf468iD_SXImoHbwJZ6j/preview",
-    zh: "https://drive.google.com/file/d/1fPQOUJndzVjnpf468iD_SXImoHbwJZ6j/preview" // Same for now, can be updated later
+    en: "https://drive.google.com/file/d/1ivoTh4HsW1LXsZTr6SRJdOjK6u_Jj7Rf/view?usp=drive_link",
+    ko: "https://drive.google.com/file/d/1ivoTh4HsW1LXsZTr6SRJdOjK6u_Jj7Rf/view?usp=drive_link",
   };
-  
+
   const resumeUrl = resumeUrls[language] || resumeUrls.en;
   const resumeTitle = getText(data.nav.resume, language);
 
@@ -26,12 +25,7 @@ const ResumeContent = () => {
           <h1>{resumeTitle}</h1>
         </Fade>
         <Fade bottom duration={1000} distance="20px">
-          <iframe 
-            src={resumeUrl} 
-            allow="autoplay" 
-            className="Resume" 
-            title={resumeTitle}
-          >
+          <iframe src={resumeUrl} allow="autoplay" className="Resume" title={resumeTitle}>
             {resumeTitle}
           </iframe>
         </Fade>
@@ -49,7 +43,5 @@ export default function Resume() {
         <ResumeContent />
       </Layout>
     </div>
-  )
+  );
 }
-
-

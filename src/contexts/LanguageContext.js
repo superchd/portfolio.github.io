@@ -18,19 +18,19 @@ export const LanguageProvider = ({ children }) => {
     if (typeof window !== 'undefined') {
       const urlParams = new URLSearchParams(window.location.search);
       const langParam = urlParams.get('lang');
-      
-      if (langParam === 'zh' || langParam === 'en') {
+
+      if (langParam === 'ko' || langParam === 'en') {
         setLanguage(langParam);
       }
     }
   }, []);
 
-  // Update URL when language changes (optional - keeps URL in sync)
+  // Update URL when language changes
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const urlParams = new URLSearchParams(window.location.search);
       const currentLangParam = urlParams.get('lang');
-      
+
       if (currentLangParam !== language) {
         urlParams.set('lang', language);
         const newUrl = `${window.location.pathname}?${urlParams.toString()}`;
@@ -40,13 +40,12 @@ export const LanguageProvider = ({ children }) => {
   }, [language]);
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'en' ? 'zh' : 'en');
+    setLanguage(prev => (prev === 'en' ? 'ko' : 'en'));
   };
 
   // Utility function to generate URLs with language parameter
   const getLanguageUrl = (targetLanguage, pathname = '') => {
     if (typeof window === 'undefined') return '';
-    
     const urlParams = new URLSearchParams();
     urlParams.set('lang', targetLanguage);
     const basePath = pathname || window.location.pathname;
@@ -54,14 +53,16 @@ export const LanguageProvider = ({ children }) => {
   };
 
   return (
-    <LanguageContext.Provider value={{
-      language,
-      setLanguage,
-      toggleLanguage,
-      getLanguageUrl,
-      isEnglish: language === 'en',
-      isChinese: language === 'zh'
-    }}>
+    <LanguageContext.Provider
+      value={{
+        language,
+        setLanguage,
+        toggleLanguage,
+        getLanguageUrl,
+        isEnglish: language === 'en',
+        isKorean: language === 'ko',
+      }}
+    >
       {children}
     </LanguageContext.Provider>
   );
